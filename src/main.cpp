@@ -90,6 +90,8 @@ int main(void)
 	lcd_init(LCD_DISP_ON);
 	lcd_led(0);
 
+	HWdata.pinsSetup();
+
 	debugSDcardLog.begin();
 
 	DallasOneWire iface(UDR1);
@@ -104,11 +106,18 @@ int main(void)
 
 	iface.DS2480B_Detect();
 
-	HWdata.pinsSetup();
-
 	//Just for see temp in debug
-	//while(true)
-	//	sensors.readAllTempSerial();
+	for (uint8_t i = 0; i < 10; i++)
+	{
+		INFO(F("Num to search attempt:"));
+		INFO(i);
+		uint16_t num = sensors.readAllTempSerial(0);
+		INFO(F("Found sensors:"));
+		INFO(num);
+		_delay_ms(200);
+	}
+
+
 
 	// Timer/Counter 1 initialization
 	// Clock source: System Clock
@@ -136,8 +145,10 @@ int main(void)
 
 	debugSDcardLog.end();
 	// Timer/Counter 1 Interrupt(s) initialization
-	TIMSK1=(1<<ICIE1) | (0<<OCIE1C) | (0<<OCIE1B) | (0<<OCIE1A) | (0<<TOIE1);
+	TIMSK1 = (1 << ICIE1) | (0 << OCIE1C) | (0 << OCIE1B) | (0 << OCIE1A)
+			| (0 << TOIE1);
 
-	while (1);
+	while (1)
+		sensors.readAllTempSerial(0);
 
 }

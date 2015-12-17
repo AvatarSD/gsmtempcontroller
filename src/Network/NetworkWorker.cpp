@@ -10,6 +10,7 @@
 #include "../LOG/debug.h"
 #include "../init/rtc.h"
 #include "../config.h"
+#include "../mainBuff/mainBuff.h"
 
 
 UART * _gsm;
@@ -60,7 +61,7 @@ bool NetworkWorker::sendTemp()
 		char pktCountStr[6];
 		static unsigned int pktCount = 0;
 		sprintf(pktCountStr, "%5u", pktCount);
-		DallasSensorData sensorData;
+		//DallasSensorData sensorData;
 		sensors.readingInit();
 
 		if(!inetIface.beginWriteInet())
@@ -82,14 +83,13 @@ bool NetworkWorker::sendTemp()
 		gsm(",");
 		gsm(HWdata.getError());
 
-		int i = 0;
-		while(sensors.readOnce(sensorData))
+		uint16_t i = 0;
+		for(; i<mainBuff.size(); i++)//  sensors.readOnce(sensorData))
 		{
-			i++;
 			gsm("\r");
-			gsm(sensorData.getROM().toString());
+			gsm(mainBuff[i].getROM().toString());
 			gsm(",");
-			gsm(sensorData.getTempStr());
+			gsm(mainBuff[i].getTempStr());
 		}
 		gsm("&");
 #ifdef LEVEL_INFO

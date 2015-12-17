@@ -35,6 +35,7 @@ SUBDIRS := \
 src/stream \
 src/sdcard/uni_avr \
 src/sdcard \
+src/mainBuff \
 src \
 src/init \
 src/UART \

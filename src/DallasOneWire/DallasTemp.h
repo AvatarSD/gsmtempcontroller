@@ -17,7 +17,7 @@ class DallasTemp {
 public:
 	DallasTemp(DallasOneWire& iface);
 
-	//const std::list<DallasSensorData>&  readAllTempSerial(bool isCurr = true);
+	int readAllTempSerial(bool isCurr = true);
 	//const std::list<DallasSensorData>&  readAllTempParalel(char attemptNum);
 
 	void readingInit();

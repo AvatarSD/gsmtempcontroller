@@ -98,5 +98,8 @@
 #define POWER_PORT PORTF
 
 
+/******************************************/
+#define MAINBUFF_SIZE 100
+
 
 #endif /* CONFIG_H_ */

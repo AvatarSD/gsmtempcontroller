@@ -14,9 +14,12 @@ public:
 
 	bool isMathFamily(unsigned char family);
 	unsigned char& operator [](int i);
+	const unsigned char& operator [](int i) const;
 	bool operator < (const ROM& cmp) const;
+	bool operator == (const ROM& cmp) const;
 	const unsigned long long int& operator &() const;
 	const char* toString() const;
+	bool isEmpty() const;
 private:
 	unsigned char ROM_NO[8];
 };

@@ -11,6 +11,7 @@ RM := rm -rf
 -include src/stream/subdir.mk
 -include src/sdcard/uni_avr/subdir.mk
 -include src/sdcard/subdir.mk
+-include src/mainBuff/subdir.mk
 -include src/init/subdir.mk
 -include src/UART/subdir.mk
 -include src/Network/GSM/subdir.mk
