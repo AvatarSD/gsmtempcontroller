@@ -96,7 +96,7 @@ bool NetworkWorker::sendTemp()
 		debug(F("[INFO]: Sensors count: ")); debug(i); debug(F("\r\n"));
 #endif
 
-		if(inetIface.endWriteInet())
+		/*if(inetIface.endWriteInet())
 		{
 			char buf[9];
 			if(gsm.getString("$", "&", buf, 8))
@@ -115,7 +115,7 @@ bool NetworkWorker::sendTemp()
 					retVal = true;
 				}
 			}
-		}
+		}*/
 	}
 	inetIface.disconnectTCP();
 	return retVal;
