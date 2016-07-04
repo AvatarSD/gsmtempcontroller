@@ -11,7 +11,7 @@
 #include "../LOG/debug.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
+#include <string.h>
 
 void * operator new(size_t size)
 {

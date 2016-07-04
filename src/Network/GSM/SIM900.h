@@ -20,10 +20,10 @@ public:
 	bool forceOFF();
 
 	// Phonebook's methods
-	char GetPhoneNumber(char position, char *phone_number);
-	char WritePhoneNumber(char position, char *phone_number);
-	char DelPhoneNumber(char position);
-	char ComparePhoneNumber(char position, char *phone_number);
+    char GetPhoneNumber(char position, char *phone_number);
+    char WritePhoneNumber(char position, char *phone_number);
+    char DelPhoneNumber(char position);
+    char ComparePhoneNumber(char position, char *phone_number);
 
 	// turns off/on the speaker
 	void SetSpeaker(char off_on);

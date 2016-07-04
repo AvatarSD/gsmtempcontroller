@@ -68,10 +68,10 @@ public:
 	//	char IsUserButtonPushed(void);
 
 	// Phonebook's methods
-	char GetPhoneNumber(char position, char *phone_number);
-	char WritePhoneNumber(char position, char *phone_number);
-	char DelPhoneNumber(char position);
-	char ComparePhoneNumber(char position, char *phone_number);
+    virtual char GetPhoneNumber(char position, char *phone_number) {};
+    virtual char WritePhoneNumber(char position, char *phone_number) {};
+    virtual char DelPhoneNumber(char position) {};
+    virtual char ComparePhoneNumber(char position, char *phone_number) {};
 
 
 	//------------------------

@@ -16,7 +16,7 @@
 #include <avr/interrupt.h>
 #include <avr/eeprom.h>
 #include <stdio.h>
-#include <string>
+#include <string.h>
 
 uint8_t eepromMainbuf[ROM_MAINBFF_SIZE * sizeof(ROM)] EEMEM;
 
